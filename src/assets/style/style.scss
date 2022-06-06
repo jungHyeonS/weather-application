@@ -1,0 +1,209 @@
+body,p,h1,h2,h3,h4,h5{
+    margin: 0;
+}
+.main{
+    background:#5CACCD;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    .topInfo{
+        text-align: center;
+        p{
+            font-size: 20px;
+            color: #fff;
+        }
+        .area{
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        h1{
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .temperature{
+            margin-top: 20px;
+        }
+        .otherTemperature{
+            margin-top: 10px;
+        }
+    }
+}
+.otherInfo{
+    background: rgba(255,255,255,0.2);
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    &::after{
+        content:'';
+        display:block;
+        clear:both;
+    }
+    .fl{
+        width: 49%;
+        float: left;
+        div{
+            width: 100%;
+            text-align: center;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            span{
+                color: #fff;
+                font-size: 15px;
+            }
+            .title{
+                font-size: 18px;
+                font-weight: bold;
+                margin-right: 30px;
+            }
+        }
+        &:first-child{
+            border-right: 0.25px solid #fff;
+        }
+    }
+}
+.bottomInfo{
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 50px;
+    .bottomNav{
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            li{
+                width: 33.3%;
+                box-sizing: border-box;
+                background: rgba(255,255,255,0.2);
+                color: #fff;
+                float: left;
+                text-align: center;
+                font-size: 18px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                box-sizing: border-box;
+            }
+            .active{
+                background: transparent;
+                border: 1px solid #fff;
+            }
+            &::after{
+                content:'';
+                display:block;
+                clear:both;
+            }
+        }
+    }
+    .bottom{
+        width: 100%;
+        background: rgba(255,255,255,0.2);
+        border-radius: 10px;
+        .timeInfo{
+            width: 100%;
+            margin-top: 20px;
+            .timeInfoWrap{
+                width: 100%;
+                overflow-x: scroll;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                ul{
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    width: 1000px;
+                    &::after{
+                        content:'';
+                        display:block;
+                        clear:both;
+                    }
+                    li{
+                        text-align: center;
+                        width: 110px;
+                        float: left;
+                        border-right: .25px solid #fff;
+                        
+                        p{
+                            font-size: 12px;
+                            color: #fff;
+                        }
+                        h1{
+                            font-weight: bold;
+                            color: #fff;
+                            font-size: 16px;
+                            margin-top: 5px;
+                            margin-bottom: 10px;
+                        }
+                        img{
+                            width: 80px;
+                            
+                        }
+                        .weakTemperature{
+                            margin-top: 15px;
+                            &::after{
+                                content:'';
+                                display:block;
+                                clear:both;
+                            }
+                            div{
+                                float: left;
+                                width: 50%;
+                                padding-left: 10px;
+                                padding-right: 10px;
+                                box-sizing: border-box;
+                                h1{
+                                    font-weight: bold;
+                                    font-size: 16px;
+                                    color: #fff;
+                                    text-align: left;
+                                    float: left;
+                                    margin: 0;
+                                }
+                                p{
+                                    text-align: right;
+                                    color: #fff;
+                                    font-size: 12px;
+                                    margin: 0;
+                                    padding-top: 3px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .mapInfo{
+            margin-top: 20px;
+            .mapInfoWrap{
+                text-align: center;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                position: relative;
+                .map{
+                    width: 60%;
+                }
+                .mapItem{
+                    background: #AFAFAF;
+                    border: 0.25px solid #000;
+                    width: 50px;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    border-radius: 5px;
+                    position: absolute;
+                    left: 30%;
+                    top: 15%;
+                    p{
+                        color: #fff;
+                        font-size: 8px;
+                    }
+                    img{
+                        width: 80%;
+                        margin-top: 5px;
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+        }
+    }
+}

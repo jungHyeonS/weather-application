@@ -1,0 +1,247 @@
+body, p, h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+.main {
+  background: #5CACCD;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.main .topInfo {
+  text-align: center;
+}
+
+.main .topInfo p {
+  font-size: 20px;
+  color: #fff;
+}
+
+.main .topInfo .area {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.main .topInfo h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.main .topInfo .temperature {
+  margin-top: 20px;
+}
+
+.main .topInfo .otherTemperature {
+  margin-top: 10px;
+}
+
+.otherInfo {
+  background: rgba(255, 255, 255, 0.2);
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 40px;
+}
+
+.otherInfo::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.otherInfo .fl {
+  width: 49%;
+  float: left;
+}
+
+.otherInfo .fl div {
+  width: 100%;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.otherInfo .fl div span {
+  color: #fff;
+  font-size: 15px;
+}
+
+.otherInfo .fl div .title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 30px;
+}
+
+.otherInfo .fl:first-child {
+  border-right: 0.25px solid #fff;
+}
+
+.bottomInfo {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.bottomInfo .bottomNav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bottomInfo .bottomNav ul li {
+  width: 33.3%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  float: left;
+  text-align: center;
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.bottomInfo .bottomNav ul .active {
+  background: transparent;
+  border: 1px solid #fff;
+}
+
+.bottomInfo .bottomNav ul::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.bottomInfo .bottom {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.bottomInfo .bottom .timeInfo {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.bottomInfo .bottom .timeInfo .timeInfoWrap {
+  width: 100%;
+  overflow-x: scroll;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.bottomInfo .bottom .timeInfo .timeInfoWrap ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 1000px;
+}
+
+.bottomInfo .bottom .timeInfo .timeInfoWrap ul::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.bottomInfo .bottom .timeInfo .timeInfoWrap ul li {
+  text-align: center;
+  width: 110px;
+  float: left;
+  border-right: .25px solid #fff;
+}
+
+.bottomInfo .bottom .timeInfo .timeInfoWrap ul li p {
+  font-size: 12px;
+  color: #fff;
+}
+
+.bottomInfo .bottom .timeInfo .timeInfoWrap ul li h1 {
+  font-weight: bold;
+  color: #fff;
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.bottomInfo .bottom .timeInfo .timeInfoWrap ul li img {
+  width: 80px;
+}
+
+.bottomInfo .bottom .timeInfo .timeInfoWrap ul li .weakTemperature {
+  margin-top: 15px;
+}
+
+.bottomInfo .bottom .timeInfo .timeInfoWrap ul li .weakTemperature::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.bottomInfo .bottom .timeInfo .timeInfoWrap ul li .weakTemperature div {
+  float: left;
+  width: 50%;
+  padding-left: 10px;
+  padding-right: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.bottomInfo .bottom .timeInfo .timeInfoWrap ul li .weakTemperature div h1 {
+  font-weight: bold;
+  font-size: 16px;
+  color: #fff;
+  text-align: left;
+  float: left;
+  margin: 0;
+}
+
+.bottomInfo .bottom .timeInfo .timeInfoWrap ul li .weakTemperature div p {
+  text-align: right;
+  color: #fff;
+  font-size: 12px;
+  margin: 0;
+  padding-top: 3px;
+}
+
+.bottomInfo .bottom .mapInfo {
+  margin-top: 20px;
+}
+
+.bottomInfo .bottom .mapInfo .mapInfoWrap {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.bottomInfo .bottom .mapInfo .mapInfoWrap .map {
+  width: 60%;
+}
+
+.bottomInfo .bottom .mapInfo .mapInfoWrap .mapItem {
+  background: #AFAFAF;
+  border: 0.25px solid #000;
+  width: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  position: absolute;
+  left: 30%;
+  top: 15%;
+}
+
+.bottomInfo .bottom .mapInfo .mapInfoWrap .mapItem p {
+  color: #fff;
+  font-size: 8px;
+}
+
+.bottomInfo .bottom .mapInfo .mapInfoWrap .mapItem img {
+  width: 80%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+/*# sourceMappingURL=style.css.map */
