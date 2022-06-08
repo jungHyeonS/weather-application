@@ -32,120 +32,37 @@
         <div class="bottomInfo">
             <div class="bottomNav">
                 <ul>
-                    <li class="active">시간대별</li>
-                    <li>주간예보</li>
-                    <li>전국날씨</li>
+                    <li :class="{'active' : isActive == 1}" @click="changeNav(1)">시간대별</li>
+                    <li :class="{'active' : isActive == 2}"  @click="changeNav(2)">주간예보</li>
+                    <li :class="{'active' : isActive == 3}"  @click="changeNav(3)">전국날씨</li>
                 </ul>
             </div>
             <div class="bottom">
-                <!-- <div class="timeInfo">
-                    <div class="timeInfoWrap">
-                        <ul>
-                            <li>
-                                <p>06/02</p>
-                                <h1>14시</h1>
-                                <img src="@/assets/img/icons/w2.png"/>
-                            </li>
-                             <li>
-                                <p>06/02</p>
-                                <h1>14시</h1>
-                                <img src="@/assets/img/icons/w2.png"/>
-                            </li>
-                             <li>
-                                <p>06/02</p>
-                                <h1>14시</h1>
-                                <img src="@/assets/img/icons/w2.png"/>
-                            </li>
-                        </ul>
-                    </div>
-                </div> -->
-                
-                <!-- <div class="timeInfo weak">
-                    <div class="timeInfoWrap">
-                        <ul>
-                            <li>
-                                <p>06/02</p>
-                                <h1>월</h1>
-                                <img src="@/assets/img/icons/w2.png"/>
-                                <div class="weakTemperature">
-                                    <div>
-                                        <h1>최고</h1>
-                                    </div>
-                                    <div>
-                                        <p>24도</p>
-                                    </div>
-                                </div>
-                                <div class="weakTemperature">
-                                    <div>
-                                        <h1>최저</h1>
-                                    </div>
-                                    <div>
-                                        <p>24도</p>
-                                    </div>
-                                </div>
-                            </li>
-                             <li>
-                                <p>06/02</p>
-                                <h1>화</h1>
-                                <img src="@/assets/img/icons/w2.png"/>
-                                <div class="weakTemperature">
-                                    <div>
-                                        <h1>최고</h1>
-                                    </div>
-                                    <div>
-                                        <p>24도</p>
-                                    </div>
-                                </div>
-                                <div class="weakTemperature">
-                                    <div>
-                                        <h1>최저</h1>
-                                    </div>
-                                    <div>
-                                        <p>24도</p>
-                                    </div>
-                                </div>
-                            </li>
-                             <li>
-                                <p>06/02</p>
-                                <h1>수</h1>
-                                <img src="@/assets/img/icons/w2.png"/>
-                                <div class="weakTemperature">
-                                    <div>
-                                        <h1>최고</h1>
-                                    </div>
-                                    <div>
-                                        <p>24도</p>
-                                    </div>
-                                </div>
-                                <div class="weakTemperature">
-                                    <div>
-                                        <h1>최저</h1>
-                                    </div>
-                                    <div>
-                                        <p>24도</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div> -->
-                <div class="mapInfo">
-                    <div class="mapInfoWrap">
-                        <img src="@/assets/img/map.png" class="map"/>
-                        <div class="mapItem">
-                            <p>서울</p>
-                            <img src="@/assets/img/icons/w2.png"/>
-                            <p>26도</p>
-                        </div>
-                    </div>
-                </div>
+                <timeInfo v-if="isActive == 1"></timeInfo>
+                <weekInfo v-if="isActive == 2"></weekInfo>
+                <mapInfo v-if="isActive == 3"></mapInfo>
             </div>
         </div>
     </div>
 </template>
 <script>
+import timeInfo from "@/components/timeInfo.vue"
+import weekInfo from "@/components/weekInfo.vue"
+import mapInfo from "@/components/mapInfo.vue";
+import { ref } from "vue";
 export default {
-    name : "mainPage"
+    name : "mainPage",
+    components:{
+        timeInfo,
+        weekInfo,
+        mapInfo
+    },
+    setup(){
+        let isActive = ref(1)
+        const changeNav = (tab) => {
+            isActive.value = tab;
+        }
+        return {isActive,changeNav}
+    }
 }
-// parent:after{content:'';display:block;clear:both;}
 </script>
