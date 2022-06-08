@@ -49,7 +49,7 @@
 import timeInfo from "@/components/timeInfo.vue"
 import weekInfo from "@/components/weekInfo.vue"
 import mapInfo from "@/components/mapInfo.vue";
-import { ref } from "vue";
+import { ref,onMounted} from "vue";
 export default {
     name : "mainPage",
     components:{
@@ -62,7 +62,25 @@ export default {
         const changeNav = (tab) => {
             isActive.value = tab;
         }
-        return {isActive,changeNav}
+
+
+
+        const getGeoLocation = () => {
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition((pos)=>{
+                    console.log("pos",pos)
+                },(err)=>{
+                    console.log(err);
+                })
+            }else{
+                alert("GPS를 지원하지 않습니다.")
+            }
+        }
+
+        onMounted(() => {
+            getGeoLocation()
+        })
+        return {isActive,changeNav,getGeoLocation}
     }
 }
 </script>
