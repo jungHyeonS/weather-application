@@ -49,7 +49,7 @@
 import timeInfo from "@/components/timeInfo.vue"
 import weekInfo from "@/components/weekInfo.vue"
 import mapInfo from "@/components/mapInfo.vue";
-import { ref,onMounted} from "vue";
+import { ref,onMounted,inject, reactive} from "vue";
 export default {
     name : "mainPage",
     components:{
@@ -58,17 +58,18 @@ export default {
         mapInfo
     },
     setup(){
+        const axios = inject('axios');
+        const key = "1523955ec9313db7ddcf2463f1dcf67c"
         let isActive = ref(1)
         const changeNav = (tab) => {
             isActive.value = tab;
         }
 
 
-
         const getGeoLocation = () => {
             if(navigator.geolocation){
                 navigator.geolocation.getCurrentPosition((pos)=>{
-                    console.log("pos",pos)
+                    weather.getWeather(pos.coords.latitude,pos.coords.longitude)
                 },(err)=>{
                     console.log(err);
                 })
@@ -77,10 +78,20 @@ export default {
             }
         }
 
+        const weather = reactive({
+            getWeather : (lat,long) =>{
+                axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&appid=${key}&lang=kr`).then((res)=>{
+                    console.log(res);
+                }).catch((err)=>{
+                    console.log(err);
+                });
+            }
+        })
+
         onMounted(() => {
             getGeoLocation()
         })
-        return {isActive,changeNav,getGeoLocation}
+        return {isActive,changeNav,getGeoLocation,weather}
     }
 }
 </script>
