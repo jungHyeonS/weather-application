@@ -207,3 +207,23 @@ body,p,h1,h2,h3,h4,h5{
         }
     }
 }
+.inc{
+    height: 100vh;
+    background:#5CACCD;
+    .loading{
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        text-align: center;
+        transform: translateX( -50% ) translateY(-50%);
+        i{
+            font-size: 40px;
+            color: white;
+        }
+        p{
+            color: white;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    }
+}
