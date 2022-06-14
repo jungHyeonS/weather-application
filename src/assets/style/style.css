@@ -19,7 +19,7 @@ body, p, h1, h2, h3, h4, h5 {
 
 .main .topInfo .area {
   margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .main .topInfo h1 {
@@ -29,7 +29,7 @@ body, p, h1, h2, h3, h4, h5 {
 }
 
 .main .topInfo .temperature {
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
 .main .topInfo .otherTemperature {

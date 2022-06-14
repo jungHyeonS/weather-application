@@ -4,12 +4,9 @@ export default createStore({
   state: {
     uvi:"",
     pad:0,
-    time:""
+    time:"",
   },
   getters: {
-    getUVI(state){
-      return state.uvi
-    }
   },
   mutations: {
     covertUVI(state,value){
@@ -26,7 +23,7 @@ export default createStore({
           result = "매우 낮음"
       }
       state.uvi = result;
-    }
+    },
   },
   actions: {
   },

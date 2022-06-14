@@ -7,7 +7,7 @@
             <!--  -->
             <p class="time">{{getTime(weather.weatherData.current.dt)}}</p>
             <h1 class="area">광진구 능동</h1>
-            <img src="@/assets/img/icons/w1.png"/>
+            <img :src="'http://openweathermap.org/img/wn/'+weather.weatherData.current.weather[0].icon+'@4x.png'"/>
             <h1 class="temperature">{{pad(weather.weatherData.current.temp)}}도</h1>
             <p class="otherTemperature">어제보다 1도 낮아요</p>
         </div>
@@ -74,17 +74,11 @@ export default {
             }
         },
         getTime(){
-            return (ms) => {
-                let seconds = Math.floor(ms / 1000);
-                let minutes = Math.floor(seconds / 60);
-                let hours = Math.floor(minutes / 60);
-
-                seconds = seconds % 60;
-                minutes = seconds >= 30 ? minutes + 1 : minutes;
-
-                minutes = minutes % 60;
-                hours = hours % 24;
-                return `${hours}:${minutes}`;
+            return (unix) => {
+                let date = new Date(unix * 1000)
+                let hour = "0" + date.getHours();
+                let minute = "0" + date.getMinutes();
+                return hour.substr(-2) + ":" + minute.substr(-2);
             }
         }
     },
@@ -98,7 +92,7 @@ export default {
             isLoading : true,
             changeNav : (tab)=>{
                 inc.isActive = tab
-            }
+            },
         })
 
 
@@ -129,6 +123,8 @@ export default {
         })
 
         onMounted(() => {
+            console.log(Math.floor(260 / 100))
+
             weather.getGeoLocation()
         })
         return {
