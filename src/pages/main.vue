@@ -5,17 +5,17 @@
     <div class="main" v-if="!inc.isLoading">
         <div class="topInfo">
             <!--  -->
-            <p class="time">{{getTime(weather.weatherData.current.dt)}}</p>
+            <p class="time">{{weather.weatherData.current.dt}}</p>
             <h1 class="area">광진구 능동</h1>
             <img :src="'http://openweathermap.org/img/wn/'+weather.weatherData.current.weather[0].icon+'@4x.png'"/>
-            <h1 class="temperature">{{pad(weather.weatherData.current.temp)}}도</h1>
+            <h1 class="temperature">{{weather.weatherData.current.temp}}도</h1>
             <p class="otherTemperature">어제보다 1도 낮아요</p>
         </div>
         <div class="otherInfo">
             <div class="fl">
                 <div>
                     <span class="title">체감온도</span>
-                    <span>{{pad(weather.weatherData.current.feels_like)}}도</span>
+                    <span>{{weather.weatherData.current.feels_like}}도</span>
                 </div>
                 <div>
                     <span class="title">자외선 지수</span>
@@ -42,8 +42,8 @@
                 </ul>
             </div>
             <div class="bottom">
-                <timeInfo v-if="inc.isActive == 1"></timeInfo>
-                <weekInfo v-if="inc.isActive == 2"></weekInfo>
+                <timeInfo v-if="inc.isActive == 1" :hourly="weather.weatherData.hourly"></timeInfo>
+                <weekInfo v-if="inc.isActive == 2" :daily="weather.weatherData.daily"></weekInfo>
                 <mapInfo v-if="inc.isActive == 3"></mapInfo>
             </div>
         </div>
@@ -68,19 +68,6 @@ export default {
         loading
     },
     computed:{
-        pad(){
-            return (temp) => {
-                return Number(temp).toFixed(0)
-            }
-        },
-        getTime(){
-            return (unix) => {
-                let date = new Date(unix * 1000)
-                let hour = "0" + date.getHours();
-                let minute = "0" + date.getMinutes();
-                return hour.substr(-2) + ":" + minute.substr(-2);
-            }
-        }
     },
     setup(){
         const store = useStore();
@@ -98,12 +85,33 @@ export default {
 
         const weather = reactive({
             weatherData :{
-                current : null
+                current : null,
+                hourly:[],
+                daily:[]
             },
+
             getWeather : (lat,long) =>{
                 axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&appid=${key}&lang=kr&units=metric`).then((res)=>{
+                    
+                    //현재 날씨 데이터 변환
                     weather.weatherData.current = res.data.current
                     store.commit("covertUVI",weather.weatherData.current.uvi)
+                    store.commit("covertUnixTime",weather.weatherData.current.dt)
+                    store.commit("covertTemp",weather.weatherData.current.temp)
+
+                    weather.weatherData.current.dt = store.state.time.text;
+                    weather.weatherData.current.temp = store.state.padTemp;
+                    
+                    store.commit("covertTemp",weather.weatherData.current.feels_like)
+                    weather.weatherData.current.feels_like = store.state.padTemp;
+
+
+                    // 시간대별 날씨
+                    weather.weatherData.hourly = res.data.hourly;
+
+                    //주간예보
+                    weather.weatherData.daily = res.data.daily;
+                    console.log("hourly",weather.weatherData.hourly);
                     inc.isLoading = false
                 }).catch((err)=>{
                     console.log(err);

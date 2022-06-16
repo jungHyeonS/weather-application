@@ -3,10 +3,13 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     uvi:"",
-    pad:0,
-    time:"",
+    padTemp:0,
+    time:{},
   },
   getters: {
+    getPad(state){
+      return state.pad
+    },
   },
   mutations: {
     covertUVI(state,value){
@@ -24,6 +27,29 @@ export default createStore({
       }
       state.uvi = result;
     },
+    covertUnixTime(state,value){
+
+      const WEEKDAY = ['일', '월', '화', '수', '목', '금', '토'];
+      let date = new Date(value * 1000)
+      let month = "0" + (date.getMonth()+1);
+      let day = "0" + date.getDate();
+      let hour = "0" + date.getHours();
+      let minute = "0" + date.getMinutes();
+      let dotw = WEEKDAY[date.getDay()]
+      state.time = {
+        month : month.substr(-2),
+        day : day.substr(-2),
+        hour : hour.substr(-2),
+        min : minute.substr(-2),
+        text : hour.substr(-2) + ":" + minute.substr(-2),
+        dotw : dotw
+      }
+
+    },
+    covertTemp(state,vale){
+      state.padTemp =  Number(vale).toFixed(0)
+
+    }
   },
   actions: {
   },
