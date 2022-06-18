@@ -213,13 +213,13 @@ body, p, h1, h2, h3, h4, h5 {
 
 .bottomInfo .bottom .mapInfo .mapInfoWrap {
   text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   position: relative;
 }
 
 .bottomInfo .bottom .mapInfo .mapInfoWrap .map {
-  width: 60%;
+  width: 75%;
 }
 
 .bottomInfo .bottom .mapInfo .mapInfoWrap .mapItem {
@@ -230,8 +230,6 @@ body, p, h1, h2, h3, h4, h5 {
   padding-bottom: 5px;
   border-radius: 5px;
   position: absolute;
-  left: 30%;
-  top: 15%;
 }
 
 .bottomInfo .bottom .mapInfo .mapInfoWrap .mapItem p {
@@ -240,9 +238,77 @@ body, p, h1, h2, h3, h4, h5 {
 }
 
 .bottomInfo .bottom .mapInfo .mapInfoWrap .mapItem img {
-  width: 80%;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  width: 35px;
+}
+
+.bottomInfo .bottom .mapInfo .mapInfoWrap .city1 {
+  left: 30%;
+  top: 20%;
+}
+
+.bottomInfo .bottom .mapInfo .mapInfoWrap .city2 {
+  left: 10%;
+  top: 23%;
+}
+
+.bottomInfo .bottom .mapInfo .mapInfoWrap .city3 {
+  left: 40%;
+  top: 2%;
+}
+
+.bottomInfo .bottom .mapInfo .mapInfoWrap .city4 {
+  left: 53%;
+  top: 17%;
+}
+
+.bottomInfo .bottom .mapInfo .mapInfoWrap .city5 {
+  left: 73%;
+  top: 21%;
+}
+
+.bottomInfo .bottom .mapInfo .mapInfoWrap .city6 {
+  left: 43%;
+  top: 35%;
+}
+
+.bottomInfo .bottom .mapInfo .mapInfoWrap .city7 {
+  left: 19%;
+  top: 38%;
+}
+
+.bottomInfo .bottom .mapInfo .mapInfoWrap .city8 {
+  left: 41%;
+  top: 51%;
+}
+
+.bottomInfo .bottom .mapInfo .mapInfoWrap .city9 {
+  left: 62%;
+  top: 45%;
+}
+
+.bottomInfo .bottom .mapInfo .mapInfoWrap .city10 {
+  left: 83%;
+  top: 37%;
+}
+
+.bottomInfo .bottom .mapInfo .mapInfoWrap .city11 {
+  left: 23%;
+  top: 63%;
+}
+
+.bottomInfo .bottom .mapInfo .mapInfoWrap .city12 {
+  left: 3%;
+  top: 71%;
+}
+
+.bottomInfo .bottom .mapInfo .mapInfoWrap .city13 {
+  left: 66%;
+  top: 65%;
+}
+
+.bottomInfo .bottom .mapInfo .mapInfoWrap .city14 {
+  left: 25%;
+  top: 84%;
 }
 
 .inc {
@@ -265,6 +331,23 @@ body, p, h1, h2, h3, h4, h5 {
 }
 
 .inc .loading p {
+  color: white;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.mapLoading {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.mapLoading i {
+  font-size: 40px;
+  color: white;
+}
+
+.mapLoading p {
   color: white;
   font-size: 14px;
   margin-top: 10px;

@@ -5,7 +5,7 @@
                 <ul :style="{'width': (111 * times.hourlyInfo.length) + 'px' }"> 
                     <li v-for="(item,index) in times.hourlyInfo" :key="index">
                         <p>{{item.days}}</p>
-                        <h1>{{item.dt}}</h1>
+                        <h1>{{item.hours}}</h1>
                         <img  :src="'http://openweathermap.org/img/wn/'+item.weather[0].icon+'@2x.png'"/>
                     </li>
                     <!-- <li>
@@ -37,10 +37,9 @@ export default {
                 times.hourlyInfo = props.hourly;
                 console.log("hourlyinfo",times.hourlyInfo)
                 for(let item of times.hourlyInfo){
-                    // console.log(item)
                     store.commit("covertUnixTime",item.dt);
                     item.days = store.state.time.month + "/" + store.state.time.day
-                    item.dt = store.state.time.hour + "시"
+                    item.hours = store.state.time.hour + "시"
                 }
             }
         })

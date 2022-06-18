@@ -90,8 +90,8 @@ export default {
                 daily:[]
             },
 
-            getWeather : (lat,long) =>{
-                axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&appid=${key}&lang=kr&units=metric`).then((res)=>{
+            getWeather : (lat,lon) =>{
+                axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${key}&lang=kr&units=metric`).then((res)=>{
                     
                     //현재 날씨 데이터 변환
                     weather.weatherData.current = res.data.current
@@ -131,7 +131,6 @@ export default {
         })
 
         onMounted(() => {
-            console.log(Math.floor(260 / 100))
 
             weather.getGeoLocation()
         })

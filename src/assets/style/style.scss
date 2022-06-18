@@ -177,11 +177,11 @@ body,p,h1,h2,h3,h4,h5{
             margin-top: 20px;
             .mapInfoWrap{
                 text-align: center;
-                padding-top: 20px;
-                padding-bottom: 20px;
+                padding-top: 50px;
+                padding-bottom: 50px;
                 position: relative;
                 .map{
-                    width: 60%;
+                    width: 75%;
                 }
                 .mapItem{
                     background: #AFAFAF;
@@ -191,18 +191,74 @@ body,p,h1,h2,h3,h4,h5{
                     padding-bottom: 5px;
                     border-radius: 5px;
                     position: absolute;
-                    left: 30%;
-                    top: 15%;
+                    
                     p{
                         color: #fff;
                         font-size: 8px;
                     }
                     img{
-                        width: 80%;
-                        margin-top: 5px;
-                        margin-bottom: 5px;
+                        width: 35px;
+                        // margin-top: 5px;
+                        // margin-bottom: 5px;
                     }
                 }
+                .city1{
+                    left: 30%;
+                    top: 20%;
+                }
+                .city2{
+                    left: 10%;
+                    top: 23%;
+                }
+                .city3{
+                    left: 40%;
+                    top: 2%;
+                }
+                .city4{
+                    left: 53%;
+                    top: 17%;
+                }
+                .city5{
+                    left: 73%;
+                    top: 21%;
+                }
+                .city6{
+                    left: 43%;
+                    top: 35%;
+                }
+                .city7{
+                    left: 19%;
+                    top: 38%;
+                }
+                .city8{
+                    left: 41%;
+                    top: 51%;
+                }
+                .city9{
+                    left: 62%;
+                    top: 45%;
+                }
+                .city10{
+                    left: 83%;
+                    top: 37%;
+                }
+                .city11{
+                    left: 23%;
+                    top: 63%;
+                }
+                .city12{
+                    left: 3%;
+                    top: 71%;
+                }
+                .city13{
+                    left: 66%;
+                    top: 65%;
+                }
+                .city14{
+                    left: 25%;
+                    top: 84%;
+                }
+                
             }
         }
     }
@@ -223,7 +279,21 @@ body,p,h1,h2,h3,h4,h5{
         p{
             color: white;
             font-size: 14px;
-            margin-top: 10px;
+            margin-top: 10px; 
         }
+    }
+}
+.mapLoading{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    i{
+        font-size: 40px;
+        color: white;
+    }
+    p{
+        color: white;
+        font-size: 14px;
+        margin-top: 10px;
     }
 }
